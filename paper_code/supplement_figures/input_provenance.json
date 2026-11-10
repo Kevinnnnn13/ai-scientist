@@ -1,0 +1,41 @@
+{
+  "inputs": {
+    "data/figure1_snapshot.json": {
+      "sha256": "234DC857B5DFC96DCCC09F925B70694481B27DE7682E0DEAB62339B36F30D341",
+      "reference_path": "C:\\Users\\22011\\Documents\\Codex\\2026-09-17\\wo\\analysis\\figure1_v3_20261013\\data\\figure1_snapshot.json"
+    },
+    "data/figure3_issues.csv": {
+      "sha256": "B7A9ABE3BEF70272E8958B59FFE7800A7939C1F8D634BC1ED4D7BE1AF43570DA",
+      "reference_path": "C:\\Users\\22011\\Documents\\Codex\\2026-09-17\\wo\\analysis\\figures_v2_20261013\\data\\figure3_issues.csv"
+    },
+    "data/figure3_rounds.csv": {
+      "sha256": "B6F3DF87CBE56B9120E73682C1562C44FA982B2A332533D95FB8275503007F6E",
+      "reference_path": "C:\\Users\\22011\\Documents\\Codex\\2026-09-17\\wo\\analysis\\figures_v2_20261013\\data\\figure3_rounds.csv"
+    },
+    "data/figure4_pilot_cells.csv": {
+      "sha256": "3DEDA57B0676E65821F335648F48C31F01EC36403AA9075D0B9B310FE6856A6D",
+      "reference_path": "C:\\Users\\22011\\Documents\\Codex\\2026-09-17\\wo\\analysis\\figures_v2_20261013\\data\\figure4_pilot_cells.csv"
+    },
+    "data/figure4_repair_pairs.csv": {
+      "sha256": "8DAD556A6DAD1EDD2FD7565E304D1A472E5F59DEBA7A9CD2266B9DEB5243DA7D",
+      "reference_path": "C:\\Users\\22011\\Documents\\Codex\\2026-09-17\\wo\\analysis\\figures_v2_20261013\\data\\figure4_repair_pairs.csv"
+    },
+    "data/figure5_preferences.csv": {
+      "sha256": "F6FFE645CBEDF0EFDE9AECA7D5EB35267385AE18D7E998B39804E86FBA83EBE6",
+      "reference_path": "C:\\Users\\22011\\Documents\\Codex\\2026-09-17\\wo\\analysis\\figures_v2_20261013\\data\\figure5_preferences.csv"
+    },
+    "data/figure5_ratings.csv": {
+      "sha256": "7F7111C98DA04B6EAC103999DDABC5C253DEC1FC465C73856805D11748393D71",
+      "reference_path": "C:\\Users\\22011\\Documents\\Codex\\2026-09-17\\wo\\analysis\\figures_v2_20261013\\data\\figure5_ratings.csv"
+    },
+    "data/figure_data.json": {
+      "sha256": "0E67F68D80F7E587C3C386BEE33AC726240EF6A89DB34220C6A591743A631116",
+      "reference_path": "C:\\Users\\22011\\Documents\\Codex\\2026-09-17\\wo\\analysis\\figures_v2_20261013\\data\\figure_data.json"
+    },
+    "data/source_manifest.json": {
+      "sha256": "743D2F03BB00339672458210B35673DA5756E7B3DBE6C85221ADC653076FE748",
+      "reference_path": "C:\\Users\\22011\\Documents\\Codex\\2026-09-17\\wo\\analysis\\figures_v2_20261013\\data\\source_manifest.json"
+    }
+  },
+  "all_inputs_copied_without_modification": true
+}

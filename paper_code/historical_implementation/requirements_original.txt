@@ -1,0 +1,9 @@
+openai>=1.0
+python-dotenv
+requests
+pandas
+scipy
+matplotlib
+fastapi>=0.141
+uvicorn[standard]>=0.52
+pydantic>=2.0

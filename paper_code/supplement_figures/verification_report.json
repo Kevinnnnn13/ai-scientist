@@ -1,0 +1,115 @@
+{
+  "pilot_cells": 72,
+  "pilot_state_counts": {
+    "in_progress": 53,
+    "ungated": 6,
+    "validated": 13
+  },
+  "repair_pairs": 6,
+  "case_rounds": 7,
+  "case_issues": 10,
+  "rating_items": 5,
+  "preference_items": 3,
+  "participants": 20,
+  "new_statistical_tests_run": false,
+  "all_data_invariants_pass": true,
+  "verified_frozen_input_files": 9,
+  "all_frozen_input_hashes_match": true,
+  "snapshot_sha256": "0E67F68D80F7E587C3C386BEE33AC726240EF6A89DB34220C6A591743A631116",
+  "pdf_checks": {
+    "figure1_evidence_workflow_v3": {
+      "pages": 1,
+      "width_mm": 180.0,
+      "height_mm": 192.617,
+      "fonts": [
+        {
+          "font": "/ELUGPM+ArialMT",
+          "embedded": true
+        },
+        {
+          "font": "/ELUGPM+Arial-BoldMT",
+          "embedded": true
+        }
+      ],
+      "raster_images": [],
+      "svg_live_text": true,
+      "extractable_text_characters": 825
+    },
+    "figure2_core_mechanisms": {
+      "pages": 1,
+      "width_mm": 180.0,
+      "height_mm": 209.903,
+      "fonts": [
+        {
+          "font": "/ELUGPM+ArialMT",
+          "embedded": true
+        },
+        {
+          "font": "/ELUGPM+Arial-BoldMT",
+          "embedded": true
+        }
+      ],
+      "raster_images": [],
+      "svg_live_text": true,
+      "extractable_text_characters": 680
+    },
+    "figure3_real_run_case": {
+      "pages": 1,
+      "width_mm": 180.0,
+      "height_mm": 226.483,
+      "fonts": [
+        {
+          "font": "/ELUGPM+ArialMT",
+          "embedded": true
+        },
+        {
+          "font": "/ELUGPM+Arial-BoldMT",
+          "embedded": true
+        }
+      ],
+      "raster_images": [],
+      "svg_live_text": true,
+      "extractable_text_characters": 898
+    },
+    "figure4_faults_and_repair": {
+      "pages": 1,
+      "width_mm": 180.0,
+      "height_mm": 212.725,
+      "fonts": [
+        {
+          "font": "/ELUGPM+ArialMT",
+          "embedded": true
+        },
+        {
+          "font": "/ELUGPM+Arial-BoldMT",
+          "embedded": true
+        }
+      ],
+      "raster_images": [],
+      "svg_live_text": true,
+      "extractable_text_characters": 907
+    },
+    "figure5_reader_evaluation": {
+      "pages": 1,
+      "width_mm": 180.0,
+      "height_mm": 174.272,
+      "fonts": [
+        {
+          "font": "/ELUGPM+ArialMT",
+          "embedded": true
+        },
+        {
+          "font": "/ELUGPM+Arial-BoldMT",
+          "embedded": true
+        }
+      ],
+      "raster_images": [],
+      "svg_live_text": true,
+      "extractable_text_characters": 633
+    }
+  },
+  "layout_checks_pass": true,
+  "accepted_figure1_pdf_unchanged": false,
+  "accepted_figure1_pdf_sha256": "00C6DA86B408A32CDBD38393EC803F0C7A7DF8500B5F4A43788953C05141F77B",
+  "visual_inspection": "See visual_review.md for the human-visible PDF render inspection."
+}

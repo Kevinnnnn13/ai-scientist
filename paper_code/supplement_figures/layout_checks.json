@@ -1,0 +1,52 @@
+[
+  {
+    "figure": "figure1_evidence_workflow_v3",
+    "width_mm": 180,
+    "height_mm": 192.62,
+    "minimum_font_pt": 8.2,
+    "maximum_font_pt": 11.0,
+    "text_count": 51,
+    "out_of_canvas": [],
+    "text_overlaps": []
+  },
+  {
+    "figure": "figure2_core_mechanisms",
+    "width_mm": 180,
+    "height_mm": 209.9,
+    "minimum_font_pt": 8.3,
+    "maximum_font_pt": 11.0,
+    "text_count": 42,
+    "out_of_canvas": [],
+    "text_overlaps": []
+  },
+  {
+    "figure": "figure3_real_run_case",
+    "width_mm": 180,
+    "height_mm": 226.48,
+    "minimum_font_pt": 8.2,
+    "maximum_font_pt": 11.0,
+    "text_count": 83,
+    "out_of_canvas": [],
+    "text_overlaps": []
+  },
+  {
+    "figure": "figure4_faults_and_repair",
+    "width_mm": 180,
+    "height_mm": 212.72,
+    "minimum_font_pt": 8.2,
+    "maximum_font_pt": 11.0,
+    "text_count": 59,
+    "out_of_canvas": [],
+    "text_overlaps": []
+  },
+  {
+    "figure": "figure5_reader_evaluation",
+    "width_mm": 180,
+    "height_mm": 174.27,
+    "minimum_font_pt": 8.2,
+    "maximum_font_pt": 11.0,
+    "text_count": 51,
+    "out_of_canvas": [],
+    "text_overlaps": []
+  }
+]

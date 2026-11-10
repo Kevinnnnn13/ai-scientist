@@ -1,0 +1,214 @@
+{
+  "phase": "formal",
+  "planned_units": 120,
+  "component": {
+    "A": {
+      "false_release": {
+        "numerator": 36,
+        "denominator": 36,
+        "valid_assessments": 48,
+        "planned_assessments": 48,
+        "execution_failures": 0
+      },
+      "eligible_release": {
+        "numerator": 6,
+        "denominator": 12,
+        "valid_assessments": 48,
+        "planned_assessments": 48,
+        "execution_failures": 0
+      },
+      "false_rejection": {
+        "numerator": 6,
+        "denominator": 12,
+        "valid_assessments": 48,
+        "planned_assessments": 48,
+        "execution_failures": 0
+      }
+    },
+    "B": {
+      "false_release": {
+        "numerator": 0,
+        "denominator": 36,
+        "valid_assessments": 48,
+        "planned_assessments": 48,
+        "execution_failures": 0
+      },
+      "eligible_release": {
+        "numerator": 0,
+        "denominator": 12,
+        "valid_assessments": 48,
+        "planned_assessments": 48,
+        "execution_failures": 0
+      },
+      "false_rejection": {
+        "numerator": 12,
+        "denominator": 12,
+        "valid_assessments": 48,
+        "planned_assessments": 48,
+        "execution_failures": 0
+      }
+    },
+    "C": {
+      "false_release": {
+        "numerator": 0,
+        "denominator": 36,
+        "valid_assessments": 48,
+        "planned_assessments": 48,
+        "execution_failures": 0
+      },
+      "eligible_release": {
+        "numerator": 10,
+        "denominator": 12,
+        "valid_assessments": 48,
+        "planned_assessments": 48,
+        "execution_failures": 0
+      },
+      "false_rejection": {
+        "numerator": 2,
+        "denominator": 12,
+        "valid_assessments": 48,
+        "planned_assessments": 48,
+        "execution_failures": 0
+      }
+    }
+  },
+  "generation": {
+    "T0": {
+      "A": {
+        "task_completion_with_release": {
+          "numerator": 0,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "released_safe_narrowing": {
+          "numerator": 0,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "actual_repair": {
+          "numerator": 0,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "initially_ineligible": 0,
+        "round_counts": {
+          "3": 18
+        },
+        "final_modes": {
+          "result": 18
+        }
+      },
+      "C": {
+        "task_completion_with_release": {
+          "numerator": 16,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "released_safe_narrowing": {
+          "numerator": 0,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "actual_repair": {
+          "numerator": 0,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "initially_ineligible": 0,
+        "round_counts": {
+          "1": 16,
+          "3": 2
+        },
+        "final_modes": {
+          "result": 18
+        }
+      }
+    },
+    "T5": {
+      "A": {
+        "task_completion_with_release": {
+          "numerator": 0,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "released_safe_narrowing": {
+          "numerator": 18,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "actual_repair": {
+          "numerator": 0,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "initially_ineligible": 0,
+        "round_counts": {
+          "1": 18
+        },
+        "final_modes": {
+          "insufficient": 18
+        }
+      },
+      "C": {
+        "task_completion_with_release": {
+          "numerator": 0,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "released_safe_narrowing": {
+          "numerator": 18,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "actual_repair": {
+          "numerator": 0,
+          "denominator": 18,
+          "valid_assessments": 18,
+          "planned_assessments": 18,
+          "execution_failures": 0
+        },
+        "initially_ineligible": 0,
+        "round_counts": {
+          "1": 18
+        },
+        "final_modes": {
+          "insufficient": 18
+        }
+      }
+    }
+  },
+  "api_events": {
+    "received": 306
+  },
+  "response_models": {
+    "deepseek-flash": 306
+  },
+  "recorded_tokens": {
+    "prompt_tokens": 281254,
+    "completion_tokens": 38477,
+    "total_tokens": 319731
+  },
+  "source_audit_sha256": "bf94d92a0aea01c36547568d1cf22319b2f69baebf0f0a52b4fecb6bde3361ba"
+}

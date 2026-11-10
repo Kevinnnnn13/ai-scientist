@@ -1,0 +1,54 @@
+{
+  "experiment_id": "robustness_pilot_6_downgrade_only",
+  "quality": "超好",
+  "questions": [
+    {
+      "id": "chem01",
+      "domain": "chemistry",
+      "text": "How does green-solvent processing with gamma-valerolactone affect the efficiency and long-term operational stability of perovskite solar cells compared with conventional DMF processing, and how can internal and external degradation pathways be distinguished experimentally?"
+    },
+    {
+      "id": "chem02",
+      "domain": "chemistry",
+      "text": "How can interface phenomena at the microscopic level be measured quantitatively, and what experimental design can separate genuine interfacial effects from bulk contributions and instrument artifacts?"
+    },
+    {
+      "id": "fin01",
+      "domain": "finance",
+      "text": "How can systemic risk in interbank networks be predicted under incomplete and conflicting data, and how should a model explicitly abstain when the evidence is insufficient or non-identifiable?"
+    },
+    {
+      "id": "fin02",
+      "domain": "finance",
+      "text": "How can distribution shift and adversarial market microstructure data be detected in machine-learning credit-risk models, and what validation protocol can distinguish robustness from overfitting to a stress-test sample?"
+    },
+    {
+      "id": "math01",
+      "domain": "mathematics",
+      "text": "Can the distribution of prime gaps be described by a probabilistic model that remains consistent with the Hardy-Littlewood prime tuple conjectures, and what falsifiable consequences would distinguish it from existing heuristics?"
+    },
+    {
+      "id": "math02",
+      "domain": "mathematics",
+      "text": "Under what conditions can neural operators reliably extrapolate solutions of partial differential equations beyond their training distribution, and what rigorous error bounds or diagnostic tests can detect silent failure?"
+    }
+  ],
+  "conditions": [
+    {
+      "id": "F0_override_downgrade_only",
+      "system": "F0",
+      "repeats": 1,
+      "perturbations": [
+        {
+          "type": "judge_override",
+          "target": "review",
+          "when": "all"
+        },
+        {
+          "type": "judge_downgrade_only",
+          "when": "all"
+        }
+      ]
+    }
+  ]
+}

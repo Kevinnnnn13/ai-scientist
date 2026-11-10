@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Scientist - 运行监控</title>
+<link rel="stylesheet" href="style.css">
+<base target="_blank">
+</head>
+<body data-page="running">
+
+<!-- 动态背景 -->
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<div class="bg-orb orb-3"></div>
+<div class="bg-grid"></div>
+
+<div class="app-layout">
+  <!-- 侧边栏 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-icon"><img src="logo.png" alt="AI Scientist Logo"></div>
+      <div class="logo-text">
+        <h2>AI Scientist</h2>
+        <span>智能假设生成</span>
+      </div>
+    </div>
+
+    <!-- 新建任务 -->
+    <div class="new-task-wrap">
+      <a href="index.html" class="new-task-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        新建任务
+      </a>
+    </div>
+
+    <div class="sidebar-section-title">
+      <span>历史记录</span>
+    </div>
+    <div class="sidebar-history" id="history">
+      <div style="padding:12px;color:var(--muted);font-size:13px">（暂无）</div>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- 主内容 -->
+  <main class="main">
+    <div class="top-bar">
+      <button class="menu-btn" id="menuBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <div class="page-title">运行监控</div>
+      <div class="top-bar-right">
+        <div class="user-login" id="userLogin">
+          <button class="login-trigger" onclick="toggleLoginModal()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span id="loginLabel">登录</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="card">
+        <div class="run-meta" id="runMeta"></div>
+
+        <!-- 思考可视化 -->
+        <div class="thinking-visualizer">
+          <div class="think-core">
+            <div class="core-dot"></div>
+            <div class="orbit orbit-1"><div class="orbit-particle"></div></div>
+            <div class="orbit orbit-2"><div class="orbit-particle"></div></div>
+            <div class="orbit orbit-3"><div class="orbit-particle"></div></div>
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring"></div>
+          </div>
+          <div class="think-text">
+            <div class="stage" id="thinkStage">AI 思考中…</div>
+            <div class="detail type-cursor" id="thinkDetail">正在初始化研究环境…</div>
+          </div>
+          <div class="particle-stream">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+          </div>
+        </div>
+
+        <!-- 进度条 -->
+        <div id="progressCard">
+          <div class="pbar-wrap">
+            <div class="pbar"><div class="pfill" id="pfill"></div></div>
+          </div>
+          <div class="pmeta">
+            <span class="stage-chip" id="pStage">启动中</span>
+            <span style="color:var(--muted)" id="pDetail"></span>
+            <span class="pct" id="pPct">0%</span>
+          </div>
+        </div>
+
+        <!-- 分数 -->
+        <div class="score" id="scores">
+          <div class="score-cell"><div class="num" id="sHyp">-</div><div class="lbl">假设分</div></div>
+          <div class="score-cell"><div class="num" id="sData">-</div><div class="lbl">数据分</div></div>
+          <div class="score-cell"><div class="num" id="sRounds">-</div><div class="lbl">迭代轮次</div></div>
+          <div class="score-cell"><div class="num" id="sStatus">-</div><div class="lbl">运行状态</div></div>
+        </div>
+
+        <!-- 成本 -->
+        <div class="cost-line" id="costLine" style="display:none">
+          <span>本次 API 消费</span>
+          <span class="amt">¥<span id="costVal">-</span></span>
+          <span class="muted">· <span id="tokVal">-</span> tokens</span>
+        </div>
+
+        <!-- 数据分低提示 -->
+        <div class="data-note" id="dataNote"></div>
+
+        <!-- 导航 -->
+        <div class="page-nav" id="navLinks" style="display:none">
+          <a href="result.html" id="toResult">查看完整结果 →</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- 登录弹窗 -->
+<div class="login-modal-overlay" id="loginModalOverlay" onclick="toggleLoginModal()"></div>
+<div class="login-modal" id="loginModal">
+  <div class="login-modal-header">
+    <h3>用户登录</h3>
+    <button class="login-close" onclick="toggleLoginModal()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="login-modal-body">
+    <div class="login-input-group">
+      <label>用户名</label>
+      <input type="text" placeholder="请输入用户名" id="loginAccount" onkeydown="if(event.key==='Enter')handleLogin()">
+    </div>
+    <button class="login-submit" onclick="handleLogin()">登录</button>
+    <div class="login-divider"><span>或</span></div>
+    <button class="login-oauth" onclick="loginGuest(); toggleLoginModal();">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20z"/><path d="M12 8v8M8 12h8"/></svg>
+      游客模式直接进入
+    </button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

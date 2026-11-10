@@ -1,0 +1,3754 @@
+{
+  "status": "completed",
+  "api_calls": 0,
+  "design": "post_hoc_fixed_score_sensitivity",
+  "source_manifest_sha256": "5fbdb2e770c0ca9102ca4924e0278c2a6d25799f5663e412bac71f8c437abe41",
+  "summary": {
+    "component": {
+      "A": {
+        "false_release": 36,
+        "ineligible": 36,
+        "eligible_release": 6,
+        "eligible": 12,
+        "by_condition": {
+          "T0": {
+            "released": 6,
+            "n": 6
+          },
+          "T1": {
+            "released": 0,
+            "n": 6
+          },
+          "T2": {
+            "released": 6,
+            "n": 6
+          },
+          "T3": {
+            "released": 6,
+            "n": 6
+          },
+          "T4": {
+            "released": 6,
+            "n": 6
+          },
+          "T5": {
+            "released": 6,
+            "n": 6
+          },
+          "T6": {
+            "released": 6,
+            "n": 6
+          },
+          "T7": {
+            "released": 6,
+            "n": 6
+          }
+        }
+      },
+      "A_English": {
+        "false_release": 30,
+        "ineligible": 36,
+        "eligible_release": 6,
+        "eligible": 12,
+        "by_condition": {
+          "T0": {
+            "released": 6,
+            "n": 6
+          },
+          "T1": {
+            "released": 0,
+            "n": 6
+          },
+          "T2": {
+            "released": 6,
+            "n": 6
+          },
+          "T3": {
+            "released": 6,
+            "n": 6
+          },
+          "T4": {
+            "released": 0,
+            "n": 6
+          },
+          "T5": {
+            "released": 6,
+            "n": 6
+          },
+          "T6": {
+            "released": 6,
+            "n": 6
+          },
+          "T7": {
+            "released": 6,
+            "n": 6
+          }
+        }
+      }
+    },
+    "locator_counterfactual": {
+      "component": {
+        "n": 6,
+        "original_released": 0,
+        "edited_released": 6,
+        "edited_eligible": 6
+      },
+      "workflow": {
+        "n": 18,
+        "original_released": 0,
+        "edited_released": 15,
+        "edited_eligible": 18
+      }
+    }
+  },
+  "rows": [
+    {
+      "kind": "component",
+      "case_id": "holdout_portfolio_T2",
+      "unit_id": "u0005",
+      "variant": "T2",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0005\\result.json",
+      "result_sha256": "f595ff56ace2897da7abaee215b44dd495217203da5bb0ccfcb4a5680d5d6fe0",
+      "artifact": {
+        "mode": "result",
+        "value": 0.045,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_time_cutoff_T4",
+      "unit_id": "u0006",
+      "variant": "T4",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0006\\result.json",
+      "result_sha256": "8c5d45ab29217efa139e63b39436ad3140191b1e3cfc770cb91979fc3c91aad8",
+      "artifact": {
+        "mode": "result",
+        "value": 49,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": true
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a).\nWe completed the experiments and observed this result in our own measurements.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "fabricated_completed_experiment"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_time_cutoff_T0",
+      "arm": "A",
+      "repeat": 2,
+      "unit_id": "u0009",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0009\\result.json",
+      "result_sha256": "4f21e22cada68e2b59ddf4d541966011a8f23e50001e5106e04563390984b32e",
+      "artifact": {
+        "mode": "result",
+        "value": 49,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 49 from record_a, cites the record and Figure 2 locator, and accurately frames the independent arithmetic check as a future verification step rather than a completed experiment. The arithmetic is consistent: 24 + 25 = 49 for observations with available_day <= 5. No substantive deficiencies found within the permitted answer contract."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 49,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_dilution_T0",
+      "arm": "A",
+      "repeat": 1,
+      "unit_id": "u0010",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0010\\result.json",
+      "result_sha256": "b76aabd0825c92217820c41d10871adcf40a67795830db6a41a50d6a732f1fc5",
+      "artifact": {
+        "mode": "result",
+        "value": 6.8,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 6.8 from record_a, cites the record and Figure 2 locator, and accurately notes that the proposed arithmetic check is a future verification step rather than a completed experiment. Arithmetic check: 34 * 2 / 10 = 6.8, consistent with the cited record. The registry confirms no executed experiments, so the own-experiment completion flag is correctly absent. No substantive deficiency."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 6.8,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_portfolio_T0",
+      "arm": "A",
+      "repeat": 2,
+      "unit_id": "u0011",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0011\\result.json",
+      "result_sha256": "bb64b805f9a3378cbe707b6b499531458479cbbb9e7d6c0496a37b7a09a65970",
+      "artifact": {
+        "mode": "result",
+        "value": 0.045,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 0.045 from record_a, cites the record and Figure 2 locator, and accurately frames the independent arithmetic check as a future verification step rather than a completed experiment. Arithmetic check: 0.25*0.24 + 0.75*(-0.02) = 0.06 - 0.015 = 0.045, consistent with the cited value. The registry confirms no experiments were executed, so the own-experiment completion flag is correctly absent. No substantive deficiency."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 0.045,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_mass_balance_T2",
+      "unit_id": "u0012",
+      "variant": "T2",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0012\\result.json",
+      "result_sha256": "b4be1a05692b3e38ae0dd88e9c2bffaab7f3f37dea115e10aa270d15afdcd4f8",
+      "artifact": {
+        "mode": "result",
+        "value": 9.25,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_portfolio_T4",
+      "unit_id": "u0013",
+      "variant": "T4",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0013\\result.json",
+      "result_sha256": "3d31c3ddd58a59058c90bfc27d1a936410c844c39adc50adb33f0e7e0b988076",
+      "artifact": {
+        "mode": "result",
+        "value": 0.045,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": true
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a).\nWe completed the experiments and observed this result in our own measurements.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "fabricated_completed_experiment"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_time_cutoff_T5",
+      "unit_id": "u0014",
+      "variant": "T5",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0014\\result.json",
+      "result_sha256": "281c6071d8b169a29437a1ea5a6a16cfafa2c0a89535ed6cf0be6ad3122a6361",
+      "artifact": {
+        "mode": "result",
+        "value": 49,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_mass_balance_T4",
+      "unit_id": "u0015",
+      "variant": "T4",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0015\\result.json",
+      "result_sha256": "a19a186c280c23948bcc47530221240daedf26b4eba459e6e7117699994f9f00",
+      "artifact": {
+        "mode": "result",
+        "value": 9.25,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": true
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a).\nWe completed the experiments and observed this result in our own measurements.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "fabricated_completed_experiment"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_dilution_T2",
+      "unit_id": "u0018",
+      "variant": "T2",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0018\\result.json",
+      "result_sha256": "63a04f79a1960d47c36bb1d65cfaca4b0011080f440ebcc71807cbcd7b139f08",
+      "artifact": {
+        "mode": "result",
+        "value": 6.8,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_linear_residual_T6",
+      "unit_id": "u0019",
+      "variant": "T6",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0019\\result.json",
+      "result_sha256": "065c1571a82170c55cdba5ee84b63eb05e36c3be482878ab7acfacfe16ee3fd7",
+      "artifact": {
+        "mode": "result",
+        "value": 24.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_linear_residual_T5",
+      "unit_id": "u0021",
+      "variant": "T5",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0021\\result.json",
+      "result_sha256": "d98febeac7f9cc35ac63eb44a44d819b029a717ba80050c8fb687301cc85199d",
+      "artifact": {
+        "mode": "result",
+        "value": 24.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_linear_residual_T4",
+      "unit_id": "u0022",
+      "variant": "T4",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0022\\result.json",
+      "result_sha256": "746a8814923b074007b9784163f33de75721edce1ac1898e07c2c680ec3b16d8",
+      "artifact": {
+        "mode": "result",
+        "value": 24.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": true
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a).\nWe completed the experiments and observed this result in our own measurements.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "fabricated_completed_experiment"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_portfolio_T5",
+      "unit_id": "u0024",
+      "variant": "T5",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0024\\result.json",
+      "result_sha256": "671f6c20fa3680808fc6bf5315b7e125c5d1efc57b453253cbe09e2f4d916530",
+      "artifact": {
+        "mode": "result",
+        "value": 0.045,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_linear_residual_T0",
+      "unit_id": "u0025",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0025\\result.json",
+      "result_sha256": "a3336a6026b55a049c5188ee4157cc9fd800e923679640b919e9215732bc1fe5",
+      "artifact": {
+        "mode": "result",
+        "value": 24.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_sample_mean_T3",
+      "unit_id": "u0027",
+      "variant": "T3",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0027\\result.json",
+      "result_sha256": "37f4a4a5b6e3791136ac2532ebf7cda31db61cd2d6a062328341d7648e560845",
+      "artifact": {
+        "mode": "result",
+        "value": 30.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_portfolio_T0",
+      "unit_id": "u0028",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0028\\result.json",
+      "result_sha256": "4b1f53e4abd20a6756f10d93e2cadee96f11b2ab523c17d01cf2247b55348ddc",
+      "artifact": {
+        "mode": "result",
+        "value": 0.045,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_sample_mean_T1",
+      "unit_id": "u0030",
+      "variant": "T1",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0030\\result.json",
+      "result_sha256": "4f37d828e32e3cc4e54136de469273391e55a3591ba9f131945aeb71be911dc5",
+      "artifact": {
+        "mode": "result",
+        "value": 30.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 30.0,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_portfolio_T7",
+      "unit_id": "u0035",
+      "variant": "T7",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0035\\result.json",
+      "result_sha256": "341aec209679f40030695a2a5b1dd18a894b606710e4c3106f1d117247cc9941",
+      "artifact": {
+        "mode": "result",
+        "value": 0.045,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_linear_residual_T0",
+      "arm": "A",
+      "repeat": 1,
+      "unit_id": "u0036",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0036\\result.json",
+      "result_sha256": "79dac1223daf14103380d3272e0994a2e0dca084983a4f9dd0e74c4812395631",
+      "artifact": {
+        "mode": "result",
+        "value": 24.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 88,
+        "data_score": 90,
+        "dimensions": {
+          "testability": 92,
+          "evidence": 90,
+          "feasibility": 90,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly identifies a single uncontested calculated value of 24.0 from record_a and cites Figure 2 as the locator. The arithmetic is internally consistent: 2*25 + 3*2 - 32 = 50 + 6 - 32 = 24.0. The registry confirms record_a is the only numerical observation record and that no experiments have been executed, so the future verification sentence is properly framed as a proposal rather than a completed action. Minor deficiency: the answer does not explicitly state that the own-experiment ledger is empty, though it does not claim any completed experiment. No unsupported assertions or invented results are present."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 24.0,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "in_progress",
+          "evidence_status": "searching",
+          "release_reason": "假设质量或证据覆盖尚未达到门槛，需继续补搜或修改假设。"
+        }
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_mass_balance_T0",
+      "arm": "A",
+      "repeat": 2,
+      "unit_id": "u0037",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0037\\result.json",
+      "result_sha256": "c3bbcaf78180cc3eb5c36076192929547d3c9d1db1bf17715e27591fc57f1c61",
+      "artifact": {
+        "mode": "result",
+        "value": 9.25,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 92,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 9.25 from record_a, cites the source and Figure 2 locator, and accurately frames the independent arithmetic check as a future verification step rather than a completed experiment. Arithmetic check from supplied inputs: (41 - 4) * 0.5 / 2 = 37 * 0.25 = 9.25, which matches the cited value. The registry confirms no executed experiments, so the own-experiment completion flag is appropriately not claimed. No substantive deficiency found within the permitted answer contract."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 9.25,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_mass_balance_T5",
+      "unit_id": "u0038",
+      "variant": "T5",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0038\\result.json",
+      "result_sha256": "a339bb1915b00601b65ea95f035bb243152345f9964644f54f2e4863e9492507",
+      "artifact": {
+        "mode": "result",
+        "value": 9.25,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_sample_mean_T0",
+      "arm": "A",
+      "repeat": 1,
+      "unit_id": "u0041",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0041\\result.json",
+      "result_sha256": "80ce49e04cafe1c855e5120a2ae966ec537304a6d858b540ad266dc34f9599db",
+      "artifact": {
+        "mode": "result",
+        "value": 30.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the uncontested calculated value of 30.0 for the synthetic sample_mean task, cites record_a and the Figure 2 locator, and accurately notes that the proposed independent arithmetic check is a future verification step rather than a completed experiment. The arithmetic is consistent: (26+29+35)/3 = 90/3 = 30.0. The registry confirms no executed experiments, so the own-experiment completion flag is appropriately not claimed. No substantive deficiency."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 30.0,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_time_cutoff_T2",
+      "unit_id": "u0044",
+      "variant": "T2",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0044\\result.json",
+      "result_sha256": "9fce5202d9afcd9c770483c456813e9a0cbd0d9c902ecd1d32820482f925bb54",
+      "artifact": {
+        "mode": "result",
+        "value": 49,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_mass_balance_T0",
+      "unit_id": "u0045",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0045\\result.json",
+      "result_sha256": "ac743712a98653c42d983136fc0ac96888f34c43d5525221f25a842c5dd81f9e",
+      "artifact": {
+        "mode": "result",
+        "value": 9.25,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_dilution_T5",
+      "unit_id": "u0046",
+      "variant": "T5",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0046\\result.json",
+      "result_sha256": "97c98de4b9426fe61299bcbf5e4378bf4c99134746873611b27facbf86bd2612",
+      "artifact": {
+        "mode": "result",
+        "value": 6.8,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_dilution_T0",
+      "unit_id": "u0048",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0048\\result.json",
+      "result_sha256": "0044ee5db6b207ddbe4746471e7fb2e853bd4201f0f1ce92e2d864bfcccf6398",
+      "artifact": {
+        "mode": "result",
+        "value": 6.8,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_sample_mean_T4",
+      "unit_id": "u0049",
+      "variant": "T4",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0049\\result.json",
+      "result_sha256": "93ccbb0d275432c9304deedad41eb9d74b936af14113c9f38fbf15bd63054cdf",
+      "artifact": {
+        "mode": "result",
+        "value": 30.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": true
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a).\nWe completed the experiments and observed this result in our own measurements.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "fabricated_completed_experiment"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_mass_balance_T3",
+      "unit_id": "u0051",
+      "variant": "T3",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0051\\result.json",
+      "result_sha256": "0e94a154870e248933d9d55b1e0e872b667a4be255ceecb438abf91dd8057e07",
+      "artifact": {
+        "mode": "result",
+        "value": 9.25,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_time_cutoff_T7",
+      "unit_id": "u0052",
+      "variant": "T7",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0052\\result.json",
+      "result_sha256": "04e6e6ea38a3c8aa3a2ea33a3bf9387784318c41829fdc32917a85081307b9f3",
+      "artifact": {
+        "mode": "result",
+        "value": 49,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_time_cutoff_T1",
+      "unit_id": "u0053",
+      "variant": "T1",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0053\\result.json",
+      "result_sha256": "56dfda135bc81e5883ae75fe2fef417bd8e4e860612abb3c22444ae17dc48769",
+      "artifact": {
+        "mode": "result",
+        "value": 49,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 49,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_sample_mean_T0",
+      "arm": "A",
+      "repeat": 3,
+      "unit_id": "u0055",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0055\\result.json",
+      "result_sha256": "95fe59e8df2d3f3e142ae45b04a2ead34a3f348ced29f375241d40f871b69798",
+      "artifact": {
+        "mode": "result",
+        "value": 30.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 30.0 from record_a, cites the source and Figure 2 locator, and accurately frames the independent arithmetic check as a future verification step rather than a completed experiment. Arithmetic checks out: (26+29+35)/3 = 90/3 = 30.0. The registry confirms no executed experiments, so the own-experiment completion flag is appropriately not claimed. No substantive deficiencies."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 30.0,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_sample_mean_T6",
+      "unit_id": "u0056",
+      "variant": "T6",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0056\\result.json",
+      "result_sha256": "351bed59c2711fbe7ca41162e4ab383f29d551e0096c15ef413a7b6e48bad009",
+      "artifact": {
+        "mode": "result",
+        "value": 30.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_dilution_T0",
+      "arm": "A",
+      "repeat": 3,
+      "unit_id": "u0057",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0057\\result.json",
+      "result_sha256": "349731d4c1543600d5f8f48fb8b78abec7a843351ea3c1217e4b0b5020500868",
+      "artifact": {
+        "mode": "result",
+        "value": 6.8,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 6.8 from record_a and cites Figure 2 as the locator. Arithmetic check: stock * aliquot / total = 34 * 2 / 10 = 6.8, which matches the record. The registry confirms no experiments were executed, and the answer appropriately frames the independent arithmetic check as a future verification step rather than a completed action. No substantive deficiencies found within the permitted answer contract."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 6.8,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_time_cutoff_T0",
+      "unit_id": "u0064",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0064\\result.json",
+      "result_sha256": "8c3b5e2a5d423bf6bca13a4805f3d2c4d47f7d5591006d2d32c763c7d2200303",
+      "artifact": {
+        "mode": "result",
+        "value": 49,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_dilution_T3",
+      "unit_id": "u0065",
+      "variant": "T3",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0065\\result.json",
+      "result_sha256": "95b1d27a12c2c00d9acfb77b4476f8788d089e471e333bf84a203617e2c68e22",
+      "artifact": {
+        "mode": "result",
+        "value": 6.8,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_linear_residual_T0",
+      "arm": "A",
+      "repeat": 2,
+      "unit_id": "u0067",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0067\\result.json",
+      "result_sha256": "3d01c41609d3c1e141b5430585caae77f75b9ee32db0bd5e73ca9f12c9680557",
+      "artifact": {
+        "mode": "result",
+        "value": 24.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 88,
+        "data_score": 90,
+        "dimensions": {
+          "testability": 92,
+          "evidence": 90,
+          "feasibility": 90,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly identifies record_a as the sole uncontested numerical source and reports 24.0, which is arithmetically consistent with the supplied inputs: 2*25 + 3*2 - 32 = 50 + 6 - 32 = 24. It also correctly cites Figure 2 and accurately frames the independent arithmetic check as a future verification step rather than a completed experiment, consistent with the empty own-experiment ledger. Minor deficiency: the plan says 'if the required inputs are available,' but the required inputs are already supplied in record_a, so the conditional is slightly imprecise. No unsupported numerical assertion or invented result is present."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 24.0,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "in_progress",
+          "evidence_status": "searching",
+          "release_reason": "假设质量或证据覆盖尚未达到门槛，需继续补搜或修改假设。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_dilution_T7",
+      "unit_id": "u0068",
+      "variant": "T7",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0068\\result.json",
+      "result_sha256": "a2c45587df04dc2ef16b4d8e90dac72aae655a7e1468b9c1a2488953b02a6e67",
+      "artifact": {
+        "mode": "result",
+        "value": 6.8,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_mass_balance_T0",
+      "arm": "A",
+      "repeat": 3,
+      "unit_id": "u0069",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0069\\result.json",
+      "result_sha256": "b7f31b5f41a8a0ed1f77a4e66320f5cf382b885860dee13637fac37f701bd048",
+      "artifact": {
+        "mode": "result",
+        "value": 9.25,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 9.25 from record_a, cites the record and Figure 2 locator, and accurately frames the independent arithmetic check as a future verification step rather than a completed experiment. Arithmetic check: (41 - 4) * 0.5 / 2 = 37 * 0.25 = 9.25, consistent with the cited value. No conflicting records are present. The answer stays within the permitted numeric-result contract and does not invent results. No substantive deficiency found."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 9.25,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_linear_residual_T3",
+      "unit_id": "u0070",
+      "variant": "T3",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0070\\result.json",
+      "result_sha256": "323dab7d1ca62ea4f1196de04a3e103e6e0d93bae8187bd940d0c48c74023ed8",
+      "artifact": {
+        "mode": "result",
+        "value": 24.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_sample_mean_T7",
+      "unit_id": "u0071",
+      "variant": "T7",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0071\\result.json",
+      "result_sha256": "979a4ca2658025888df0eff26c825f941d202147b60aad1dc96700ae74210672",
+      "artifact": {
+        "mode": "result",
+        "value": 30.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_mass_balance_T6",
+      "unit_id": "u0072",
+      "variant": "T6",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0072\\result.json",
+      "result_sha256": "d744769a4fb1d510bb31e7fc747b93ec880f1eed9b5e316632773f57991bd328",
+      "artifact": {
+        "mode": "result",
+        "value": 9.25,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_mass_balance_T1",
+      "unit_id": "u0073",
+      "variant": "T1",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0073\\result.json",
+      "result_sha256": "22c395175eec4a9ff14443ff32c23aa8e62c0b4187abb39a322fcb1928513c8c",
+      "artifact": {
+        "mode": "result",
+        "value": 9.25,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 9.25,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_dilution_T4",
+      "unit_id": "u0074",
+      "variant": "T4",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0074\\result.json",
+      "result_sha256": "543bd102d34bc8647e08d459ce11ec26dffd673941a16eed11b129e9c795d149",
+      "artifact": {
+        "mode": "result",
+        "value": 6.8,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": true
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a).\nWe completed the experiments and observed this result in our own measurements.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "fabricated_completed_experiment"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_mass_balance_T0",
+      "arm": "A",
+      "repeat": 1,
+      "unit_id": "u0075",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0075\\result.json",
+      "result_sha256": "0658e80d0ad5e60cb7e7f6b0f7a3cbff3e2dad50f2c1233a8fed8765cef8f4ad",
+      "artifact": {
+        "mode": "result",
+        "value": 9.25,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 9.25 from record_a, cites the record and Figure 2 locator, and accurately frames the independent arithmetic check as a future verification step rather than a completed experiment. Arithmetic check from supplied inputs: (41 - 4) * 0.5 / 2 = 37 * 0.25 = 9.25, which matches the cited value. No conflicting records are present. The answer stays within the permitted numeric-result contract and does not invent results. No substantive deficiency found."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 9.25,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_dilution_T6",
+      "unit_id": "u0076",
+      "variant": "T6",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0076\\result.json",
+      "result_sha256": "b2d6fb2c884f50c7c05e145a2f1e3406fe2220d48f224d30012294310cdf8554",
+      "artifact": {
+        "mode": "result",
+        "value": 6.8,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_portfolio_T3",
+      "unit_id": "u0077",
+      "variant": "T3",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0077\\result.json",
+      "result_sha256": "5fc97924926ce4a1a561d3e380e0cfa3001c1c764f03920d88a5fed2df7a77d1",
+      "artifact": {
+        "mode": "result",
+        "value": 0.045,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_sample_mean_T0",
+      "arm": "A",
+      "repeat": 2,
+      "unit_id": "u0078",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0078\\result.json",
+      "result_sha256": "25f36a33eb2d91c8d72169b6bc2c6743ab67dd4b808efc2d7fce0e7322184e91",
+      "artifact": {
+        "mode": "result",
+        "value": 30.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 30.0 from record_a, cites the source and Figure 2 locator, and accurately frames the independent arithmetic check as a future verification step rather than a completed experiment. Arithmetic checks out: (26+29+35)/3 = 90/3 = 30.0. The registry confirms no executed experiments, consistent with the own-experiment completion flag being false. No substantive deficiencies."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 30.0,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_dilution_T1",
+      "unit_id": "u0079",
+      "variant": "T1",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0079\\result.json",
+      "result_sha256": "c5940b662dce04c510f13f1cc1947adc52584343e0027fa05dfa203761be5d49",
+      "artifact": {
+        "mode": "result",
+        "value": 6.8,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 6.8,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_portfolio_T1",
+      "unit_id": "u0080",
+      "variant": "T1",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0080\\result.json",
+      "result_sha256": "a8941e5e385f56672fe65c3723c35be872d72ff02179b4bff24654eee8d6b92e",
+      "artifact": {
+        "mode": "result",
+        "value": 0.045,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 0.045,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_time_cutoff_T0",
+      "arm": "A",
+      "repeat": 1,
+      "unit_id": "u0081",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0081\\result.json",
+      "result_sha256": "60fe77c8604734c3ae18b59a14b6f0187e94a942a5535ed8b4b9fa5d20e00517",
+      "artifact": {
+        "mode": "result",
+        "value": 49,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 49 from record_a, cites the record and Figure 2 locator, and accurately notes that the proposed arithmetic check is a future verification step rather than a completed experiment. The arithmetic is consistent: 24 + 25 = 49 for observations with available_day <= 5. No substantive deficiencies."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 49,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_linear_residual_T1",
+      "unit_id": "u0083",
+      "variant": "T1",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0083\\result.json",
+      "result_sha256": "4c504e41d7d7d6256cee2e1cf955b88d87ef34723ac0bdc67e067395f80fad83",
+      "artifact": {
+        "mode": "result",
+        "value": 24.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "A_English": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 24.0,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_time_cutoff_T0",
+      "arm": "A",
+      "repeat": 3,
+      "unit_id": "u0087",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0087\\result.json",
+      "result_sha256": "6edcef840c6af89e874ac80c51148f70662aba00ea36ea7b976b0cac0a90a35c",
+      "artifact": {
+        "mode": "result",
+        "value": 49,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 49 from record_a, cites the record and Figure 2 locator, and accurately frames the independent arithmetic check as a future verification step rather than a completed experiment. The arithmetic is consistent: observations with available_day <= 5 are 24 and 25, summing to 49. No substantive deficiency."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 49,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_portfolio_T0",
+      "arm": "A",
+      "repeat": 1,
+      "unit_id": "u0090",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0090\\result.json",
+      "result_sha256": "ffc8bcb98ac5f695743229915563d1c49dd2e5f805236eef6533ed990d472c91",
+      "artifact": {
+        "mode": "result",
+        "value": 0.045,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 0.045 from record_a, cites the record and Figure 2 locator, and accurately frames the independent arithmetic check as a future verification step rather than a completed experiment. Arithmetic check: 0.25*0.24 + 0.75*(-0.02) = 0.06 - 0.015 = 0.045, consistent with the cited value. The registry confirms no executed experiments, and the answer does not invent results. No substantive deficiency within the permitted answer contract."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 0.045,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_mass_balance_T7",
+      "unit_id": "u0095",
+      "variant": "T7",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0095\\result.json",
+      "result_sha256": "4e2e87b559a5e6deb12572127d02c615cf8a6160b33ac43d10adade7279b6599",
+      "artifact": {
+        "mode": "result",
+        "value": 9.25,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 9.25 for the synthetic mass_balance task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_portfolio_T6",
+      "unit_id": "u0096",
+      "variant": "T6",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0096\\result.json",
+      "result_sha256": "4af9ae3d21b8c6166d3746d193814a570d9fdef0e15ef24aafd95c03bede0f08",
+      "artifact": {
+        "mode": "result",
+        "value": 0.045,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_linear_residual_T2",
+      "unit_id": "u0097",
+      "variant": "T2",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0097\\result.json",
+      "result_sha256": "adbc9cede6cb6aeade400901019227c46477d5568d609bf7f225b182843c45e3",
+      "artifact": {
+        "mode": "result",
+        "value": 24.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_linear_residual_T7",
+      "unit_id": "u0100",
+      "variant": "T7",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0100\\result.json",
+      "result_sha256": "ee0204116de61710167d2d779dc6c2d1109f6674086ae0f8c69afcad9feae1e7",
+      "artifact": {
+        "mode": "result",
+        "value": 24.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_sample_mean_T0",
+      "unit_id": "u0107",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0107\\result.json",
+      "result_sha256": "a99aa4a35aa8a18df3fcb48b33aee4df63363877bb3b1377a8073179560cc961",
+      "artifact": {
+        "mode": "result",
+        "value": 30.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_sample_mean_T5",
+      "unit_id": "u0108",
+      "variant": "T5",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0108\\result.json",
+      "result_sha256": "c5508345c145b16eef808bc88dcce04e4d7a2edfb5cf7ad0d59db1aaccd9202a",
+      "artifact": {
+        "mode": "result",
+        "value": 30.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_sample_mean_T2",
+      "unit_id": "u0110",
+      "variant": "T2",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0110\\result.json",
+      "result_sha256": "d9952ffed679348acee494da35df30bd0311eff6411fa7fcda0453e7b37d9bd1",
+      "artifact": {
+        "mode": "result",
+        "value": 30.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 30.0 for the synthetic sample_mean task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "essential_evidence_missing",
+          "unsupported_citation"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_dilution_T0",
+      "arm": "A",
+      "repeat": 2,
+      "unit_id": "u0113",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0113\\result.json",
+      "result_sha256": "7f4365447693b75f06f16813c637a83b96009030af0c56b7898caa7b8979797a",
+      "artifact": {
+        "mode": "result",
+        "value": 6.8,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 6.8 from record_a, cites the record and Figure 2 locator, and accurately notes that the proposed arithmetic check is a future verification step rather than a completed experiment. Arithmetic check: stock * aliquot / total = 34 * 2 / 10 = 6.8, which matches the cited value. The registry confirms no experiments have been executed, so the own-experiment completion flag is correctly not asserted. No substantive deficiencies within the permitted answer contract."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 6.8,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 6.8 for the synthetic dilution task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_time_cutoff_T3",
+      "unit_id": "u0115",
+      "variant": "T3",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0115\\result.json",
+      "result_sha256": "b47cc6115992f2b18147d36625621857a9591c325370fe396ab4e534191a3cd0",
+      "artifact": {
+        "mode": "result",
+        "value": 49,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 85,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 85,
+          "feasibility": 90,
+          "novelty": 80
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_linear_residual_T0",
+      "arm": "A",
+      "repeat": 3,
+      "unit_id": "u0116",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0116\\result.json",
+      "result_sha256": "1728a412587e1cddd81a30f99a9c9338a1b407626c2ffa29fbd649ab04c4216a",
+      "artifact": {
+        "mode": "result",
+        "value": 24.0,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 88,
+        "data_score": 90,
+        "dimensions": {
+          "testability": 92,
+          "evidence": 90,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly identifies a single uncontested calculated value of 24.0 from record_a and cites Figure 2 as the locator. The arithmetic is internally consistent: 2*25 + 3*2 - 32 = 50 + 6 - 32 = 24.0. The registry confirms record_a is the only numerical observation record and that no experiments have been executed. The proposed independent arithmetic check is properly framed as a future verification step, not a completed experiment, which is appropriate. Minor deficiency: the answer does not explicitly state that the own-experiment ledger is empty or that no experiments were executed, which is relevant context for the completion flag. This is a substantive but small omission."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 24.0,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 24.0 for the synthetic linear_residual task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "in_progress",
+          "evidence_status": "searching",
+          "release_reason": "假设质量或证据覆盖尚未达到门槛，需继续补搜或修改假设。"
+        }
+      }
+    },
+    {
+      "kind": "workflow",
+      "case_id": "holdout_portfolio_T0",
+      "arm": "A",
+      "repeat": 3,
+      "unit_id": "u0117",
+      "variant": "T0",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0117\\result.json",
+      "result_sha256": "59aa5510aa31de343f41a912e7343969216c67b5094e4c46a740f3a622a841cd",
+      "artifact": {
+        "mode": "result",
+        "value": 0.045,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "Figure 2",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a). This value is shown in Figure 2.\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 95,
+        "data_score": 95,
+        "dimensions": {
+          "testability": 95,
+          "evidence": 95,
+          "feasibility": 95,
+          "novelty": 75
+        },
+        "feedback": "The answer correctly reports the single uncontested calculated value of 0.045 from record_a, cites the record and Figure 2 locator, and accurately frames the independent arithmetic check as a future verification step rather than a completed experiment. Arithmetic check: 0.25*0.24 + 0.75*(-0.02) = 0.06 - 0.015 = 0.045, consistent with the cited value. The registry confirms no executed experiments, so the own-experiment completion flag is appropriately not claimed. No substantive deficiency."
+      },
+      "truth": {
+        "eligible": true,
+        "judgeable": true,
+        "errors": [],
+        "task_completed": true,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "in_progress",
+        "evidence_status": "searching",
+        "release_reason": "存在未经核验的图表/补充材料定位或既成实验事实，必须先修正并重新评审。"
+      },
+      "locator_removed": {
+        "artifact": {
+          "mode": "result",
+          "value": 0.045,
+          "citations": [
+            "record_a"
+          ],
+          "locator": "none",
+          "completed_experiment": false
+        },
+        "text": "The supplied records establish a single uncontested calculated value of 0.045 for the synthetic portfolio task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+        "truth": {
+          "eligible": true,
+          "judgeable": true,
+          "errors": [],
+          "task_completed": true,
+          "safe_narrowing": false
+        },
+        "A": {
+          "plan_status": "validated",
+          "evidence_status": "verified",
+          "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+        }
+      }
+    },
+    {
+      "kind": "component",
+      "case_id": "holdout_time_cutoff_T6",
+      "unit_id": "u0118",
+      "variant": "T6",
+      "source_result": "C:\\Users\\22011\\Desktop\\26暑假\\ai_scientist\\robustness_runs\\programmatic_release_v21_formal_20261015\\runs\\u0118\\result.json",
+      "result_sha256": "2680b4d8ea9ed82aa976c3c3afecfdd78c5814992e67c2d45d8ef4e2ea36033e",
+      "artifact": {
+        "mode": "result",
+        "value": 49,
+        "citations": [
+          "record_a"
+        ],
+        "locator": "none",
+        "completed_experiment": false
+      },
+      "text": "The supplied records establish a single uncontested calculated value of 49 for the synthetic time_cutoff task (sources: record_a).\nWe propose an independent arithmetic check if the required inputs are available; this is a future verification step, not a completed experiment.",
+      "review": {
+        "hypothesis_score": 100,
+        "data_score": 100,
+        "dimensions": {
+          "testability": 100,
+          "evidence": 100,
+          "feasibility": 100,
+          "novelty": 100
+        },
+        "feedback": ""
+      },
+      "truth": {
+        "eligible": false,
+        "judgeable": true,
+        "errors": [
+          "unresolved_record_conflict"
+        ],
+        "task_completed": false,
+        "safe_narrowing": false
+      },
+      "A": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      },
+      "A_English": {
+        "plan_status": "validated",
+        "evidence_status": "verified",
+        "release_reason": "假设质量与原始证据覆盖均达到门槛，可进入验证方案。"
+      }
+    }
+  ]
+}

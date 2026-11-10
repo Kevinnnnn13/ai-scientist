@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Scientist - 科学假设生成</title>
+<link rel="stylesheet" href="style.css">
+<base target="_blank">
+</head>
+<body data-page="index">
+
+<!-- 动态背景 -->
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<div class="bg-orb orb-3"></div>
+<div class="bg-grid"></div>
+
+<!-- 登录覆盖层 -->
+<div class="login-overlay" id="loginOverlay">
+  <div class="login-box">
+    <div class="login-icon"><img src="logo.png" alt="AI Scientist Logo"></div>
+    <h2>🔭 AI Scientist</h2>
+    <p class="login-subtitle">输入用户名登录，即可查看你自己的历史记录<br>（密码功能后续开放）</p>
+    <input id="loginName" placeholder="用户名（中文 / 字母 / 数字 / 下划线）" maxlength="32" onkeydown="if(event.key==='Enter')login()">
+    <div class="login-btn-row">
+      <button class="btn-primary" onclick="login()">登录 / 进入</button>
+      <button class="btn-secondary" onclick="loginGuest()">游客模式</button>
+    </div>
+    <div id="loginMsg" class="login-msg"></div>
+  </div>
+</div>
+
+<div class="app-layout">
+  <!-- 侧边栏 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-icon"><img src="logo.png" alt="AI Scientist Logo"></div>
+      <div class="logo-text">
+        <h2>AI Scientist</h2>
+        <span>你的智能科研助手</span>
+      </div>
+    </div>
+
+    <!-- 新建任务 -->
+    <div class="new-task-wrap">
+      <a href="index.html" class="new-task-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        新建任务
+      </a>
+    </div>
+
+    <div class="sidebar-section-title">
+      <span>历史记录</span>
+    </div>
+    <div class="sidebar-history" id="history">
+      <div style="padding:12px;color:var(--muted);font-size:13px">（暂无）</div>
+    </div>
+  </aside>
+
+  <!-- 移动端遮罩 -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- 主内容 -->
+  <main class="main">
+    <div class="top-bar">
+      <button class="menu-btn" id="menuBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <div class="page-title">提出你的科学问题</div>
+      <div class="top-bar-right">
+        <!-- 用户登录模块 -->
+        <div class="user-login" id="userLogin">
+          <button class="login-trigger" onclick="toggleLoginModal()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span id="loginLabel">登录</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- 用户栏 -->
+      <div class="userbar" id="userBar" style="display:none">
+        <span class="user-badge" id="userBadge"></span>
+        <button class="btn-secondary" onclick="logout()">切换用户</button>
+      </div>
+
+      <!-- Hero -->
+      <div class="hero">
+        <div class="hero-icon"><img src="logo.png" alt="AI Scientist Logo"></div>
+        <h1>提出你的科学问题</h1>
+        <p>AI Scientist将自动进行文献调研、缺口分析、假设生成与多轮评审，帮你找到可验证的研究假设</p>
+      </div>
+
+      <!-- 指南卡片 -->
+      <div class="card guide-card">
+        <div class="guide-head">使用指南</div>
+        <div class="guide">
+          <div class="guide-item hint">请用一句英文聚焦一个具体问题，例如：Does judicial independence affect court case outcomes?</div>
+          <div class="guide-item ok">实证类、可检验的问题效果最好</div>
+          <div class="guide-item bad">中文提问、纯观点类（"应不应该…""你怎么看…"）效果不佳</div>
+        </div>
+      </div>
+
+      <!-- 我的历史 -->
+      <div class="card" id="myHistoryCard" style="display:none">
+        <div class="guide-head">我的历史</div>
+        <div class="sidebar-my-history" id="myHistory">
+          <div style="padding:12px;color:var(--muted);font-size:13px">（登录后加载…）</div>
+        </div>
+        <div class="btn-row" style="margin-top:10px">
+          <button class="btn-secondary" onclick="loadProfile(true)">🧠 我的画像</button>
+          <span class="muted">累计有效提问 ≥ 5 次后自动生成专业领域画像</span>
+        </div>
+      </div>
+
+      <!-- 画像卡片 -->
+      <div class="card" id="profileCard" style="display:none">
+        <div class="guide-head">🧠 我的画像（专业领域推断）</div>
+        <div id="profileBox" style="font-size:14px;line-height:1.8">（生成中…）</div>
+      </div>
+
+      <!-- 输入卡片 -->
+      <div class="card chat-card">
+        <label class="field-label">研究问题</label>
+        <div class="chat-input-wrap">
+          <textarea id="q" oninput="detectAndTranslate();autoResize(this)" onkeydown="handleEnter(event)" placeholder="例如：Does judicial independence affect court case outcomes?" rows="1"></textarea>
+          <button class="send-btn" id="start" onclick="startRun()" title="发送 (Enter)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+
+        <!-- 自动翻译提示 -->
+        <div id="translateRow" class="translate-hint" style="display:none">
+          <span style="color:var(--good);font-weight:600">已自动翻译：</span>
+          <span id="translatedText" style="color:var(--text-secondary);flex:1"></span>
+          <button onclick="useTranslation()">使用翻译</button>
+          <button onclick="restoreOriginal()">恢复原文</button>
+        </div>
+
+        <!-- 示例 -->
+        <div class="btn-row" style="margin-top:14px">
+          <label style="margin:0;font-size:12px;color:var(--muted)">其他提问示例：</label>
+          <button class="example-btn" onclick="fillExample(0)">高温超导</button>
+          <button class="example-btn" onclick="fillExample(1)">宇宙起源</button>
+          <button class="example-btn" onclick="fillExample(2)">意识产生</button>
+          <button class="example-btn" onclick="fillExample(3)">康尼扎罗反应</button>
+        </div>
+
+        <!-- 质量档位 -->
+        <label class="field-label" style="margin-top:20px">质量档位</label>
+        <div class="quality-selector" id="qualitySelector">
+          <div class="quality-option" data-value="好">
+            <div class="q-title">好</div>
+            <div class="q-desc">快速探索</div>
+          </div>
+          <div class="quality-option active" data-value="超好">
+            <div class="q-title">超好</div>
+            <div class="q-desc">深度研究</div>
+          </div>
+          <div class="quality-option" data-value="顶级">
+            <div class="q-title">顶级</div>
+            <div class="q-desc">顶级严谨</div>
+          </div>
+        </div>
+        <input type="hidden" id="quality" value="超好">
+
+        <!-- 安全拦截提示 -->
+        <div class="guard-alert" id="guardAlert"></div>
+
+        <span class="status-text" id="status"></span>
+      </div>
+
+      <!-- 论文输入 -->
+      <div class="card" id="papersCard">
+        <label class="field-label">论文输入（可选 · 最多 3 篇 · 可粘贴文本，或上传 .md / .docx / .pdf 自动提取文字）</label>
+        <div id="paperSlots"></div>
+        <div class="btn-row" style="margin-top:4px">
+          <button type="button" class="paper-add" onclick="addPaperSlot()">+ 添加论文</button>
+          <span class="muted">支持两种方式：点「上传」选文件，或直接把 .md/.docx/.pdf 拖到论文文本框内；不输入论文则走纯问题模式</span>
+        </div>
+      </div>
+
+      <!-- 追问精修 -->
+      <div class="card" id="clarifyCard" style="display:none">
+        <label class="field-label">追问精修（可选）— 系统需要补充细节以提升假设质量</label>
+        <div id="clarifyQuestions"></div>
+        <div class="btn-row" style="margin-top:10px">
+          <button class="btn-primary" id="clarifySubmit" onclick="submitClarify()">提交补充并开始运行</button>
+          <button class="btn-secondary" id="clarifySkip" onclick="skipClarify()">信息够了，跳过追问直接运行</button>
+        </div>
+        <span id="clarifyNote" class="muted"></span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- 登录弹窗（用于已登录用户切换账号） -->
+<div class="login-modal-overlay" id="loginModalOverlay" onclick="toggleLoginModal()"></div>
+<div class="login-modal" id="loginModal">
+  <div class="login-modal-header">
+    <h3>用户登录</h3>
+    <button class="login-close" onclick="toggleLoginModal()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="login-modal-body">
+    <div class="login-input-group">
+      <label>用户名</label>
+      <input type="text" placeholder="请输入用户名" id="loginAccount" onkeydown="if(event.key==='Enter')handleLogin()">
+    </div>
+    <button class="login-submit" onclick="handleLogin()">登录</button>
+    <div class="login-divider"><span>或</span></div>
+    <button class="login-oauth" onclick="loginGuest(); toggleLoginModal();">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20z"/><path d="M12 8v8M8 12h8"/></svg>
+      游客模式直接进入
+    </button>
+  </div>
+</div>
+
+<div class="demo-badge">Demo 演示版</div>
+
+<script src="app.js"></script>
+</body>
+</html>

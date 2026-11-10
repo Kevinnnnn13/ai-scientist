@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Scientist - 研究结果</title>
+<link rel="stylesheet" href="style.css">
+<base target="_blank">
+</head>
+<body data-page="result">
+
+<!-- 动态背景 -->
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<div class="bg-orb orb-3"></div>
+<div class="bg-grid"></div>
+
+<div class="app-layout">
+  <!-- 侧边栏 -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-icon"><img src="logo.png" alt="AI Scientist Logo"></div>
+      <div class="logo-text">
+        <h2>AI Scientist</h2>
+        <span>智能假设生成</span>
+      </div>
+    </div>
+
+    <!-- 新建任务 -->
+    <div class="new-task-wrap">
+      <a href="index.html" class="new-task-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        新建任务
+      </a>
+    </div>
+
+    <div class="sidebar-section-title">
+      <span>历史记录</span>
+    </div>
+    <div class="sidebar-history" id="history">
+      <div style="padding:12px;color:var(--muted);font-size:13px">（暂无）</div>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- 主内容 -->
+  <main class="main">
+    <div class="top-bar">
+      <button class="menu-btn" id="menuBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+      <div class="page-title">研究结果</div>
+      <div class="top-bar-right">
+        <div class="user-login" id="userLogin">
+          <button class="login-trigger" onclick="toggleLoginModal()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span id="loginLabel">登录</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="card">
+        <div class="run-meta" id="runMeta"></div>
+
+        <!-- 进度（运行中时显示） -->
+        <div id="progressCard" style="display:none;margin-top:12px">
+          <div class="pbar-wrap">
+            <div class="pbar"><div class="pfill" id="pfill"></div></div>
+          </div>
+          <div class="pmeta">
+            <span class="stage-chip" id="pStage">启动中</span>
+            <span style="color:var(--muted)" id="pDetail"></span>
+            <span class="pct" id="pPct">0%</span>
+          </div>
+        </div>
+
+        <!-- 分数 -->
+        <div class="score" id="scores" style="margin-top:12px">
+          <div class="score-cell"><div class="num" id="sHyp">-</div><div class="lbl">假设分</div></div>
+          <div class="score-cell"><div class="num" id="sData">-</div><div class="lbl">数据分</div></div>
+          <div class="score-cell"><div class="num" id="sRounds">-</div><div class="lbl">迭代轮次</div></div>
+          <div class="score-cell"><div class="num" id="sStatus">-</div><div class="lbl">状态</div></div>
+        </div>
+
+        <!-- 数据分低提示 -->
+        <div class="data-note" id="dataNote"></div>
+
+        <!-- 成本 -->
+        <div class="cost-line" id="costLine" style="display:none">
+          <span>本次 API 消费</span>
+          <span class="amt">¥<span id="costVal">-</span></span>
+          <span class="muted">· <span id="tokVal">-</span> tokens</span>
+        </div>
+
+        <!-- 导出 -->
+        <div class="export-group" id="exportRow" style="display:none;margin-top:16px">
+          <button class="btn-primary" id="exportBtn" onclick="exportReport('html')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            导出 HTML 报告
+          </button>
+          <button class="btn-secondary" onclick="exportReport('md')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            导出 Markdown
+          </button>
+        </div>
+
+        <!-- 新一轮 -->
+        <div class="page-nav" id="nextRow" style="display:none;margin-top:12px">
+          <a href="index.html" class="nav-link">🔄 开始新一轮</a>
+        </div>
+
+        <!-- 知识树 -->
+        <div id="treeCard" style="display:none;margin-top:20px">
+          <label class="field-label">🧠 知识拆解（推理过程：问题 → 知识点 → 文献 → 缺口）</label>
+          <div class="tree-root-node" id="treeRoot"></div>
+          <div class="tree-gaps" id="treeGaps" style="display:none"></div>
+        </div>
+
+        <!-- 假设 -->
+        <label class="field-label" style="margin-top:20px">最佳假设</label>
+        <div class="hyp-wrap" id="hypText">
+          <div style="color:var(--muted);text-align:center;padding:40px 0">（加载中…）</div>
+        </div>
+
+        <!-- 人工反馈 -->
+        <div id="fbArea" style="display:none;margin-top:24px">
+          <label class="field-label">人工反馈（提交后系统将进行新一轮回应）</label>
+          <div class="fb" style="margin-top:10px">
+            <button class="fb-btn" onclick="setVerdict('通过', this)">通过</button>
+            <button class="fb-btn" onclick="setVerdict('需修改', this)">需修改</button>
+            <button class="fb-btn" onclick="setVerdict('不通过', this)">不通过</button>
+          </div>
+          <textarea id="fbQs" placeholder="你的疑问与修改建议（一行一条）" style="min-height:80px;margin-top:12px"></textarea>
+          <button class="btn-primary" id="fbSend" onclick="sendFeedback()" style="margin-top:12px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            提交反馈
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- 登录弹窗 -->
+<div class="login-modal-overlay" id="loginModalOverlay" onclick="toggleLoginModal()"></div>
+<div class="login-modal" id="loginModal">
+  <div class="login-modal-header">
+    <h3>用户登录</h3>
+    <button class="login-close" onclick="toggleLoginModal()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="login-modal-body">
+    <div class="login-input-group">
+      <label>用户名</label>
+      <input type="text" placeholder="请输入用户名" id="loginAccount" onkeydown="if(event.key==='Enter')handleLogin()">
+    </div>
+    <button class="login-submit" onclick="handleLogin()">登录</button>
+    <div class="login-divider"><span>或</span></div>
+    <button class="login-oauth" onclick="loginGuest(); toggleLoginModal();">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20z"/><path d="M12 8v8M8 12h8"/></svg>
+      游客模式直接进入
+    </button>
+  </div>
+</div>
+
+<div class="demo-badge">Demo 演示版</div>
+
+<script src="app.js"></script>
+</body>
+</html>

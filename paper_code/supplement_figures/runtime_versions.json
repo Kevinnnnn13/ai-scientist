@@ -1,0 +1,14 @@
+{
+  "python": "3.13.9",
+  "packages": {
+    "matplotlib": "3.10.6",
+    "numpy": "2.3.5",
+    "Pillow": "12.0.0",
+    "pypdf": "6.16.2"
+  },
+  "font": "Arial",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "preview_dpi": 300,
+  "poppler": "C:\\Users\\22011\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.EXE",
+  "build_time_utc": "2026-10-13T14:50:40.831289+00:00"
+}

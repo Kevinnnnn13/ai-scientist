@@ -1,0 +1,67 @@
+{
+  "status": "candidate_sources_not_independently_reviewed",
+  "formal_ready": false,
+  "note": "Source discovery only. These six questions must not be used to tune the controller. Each packet still needs full-text checks, a second source where needed, a base plan, variants, and independent human review.",
+  "sources": [
+    {
+      "question_id": "release_chem01",
+      "source_id": "adsorption_mechanisms_2021",
+      "title": "Langmuir Adsorption Kinetics in Liquid Media: Interface Reaction Model",
+      "identifier": "10.1021/acsomega.1c01449",
+      "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8190925/",
+      "download_url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC8190925/unicode",
+      "format": "bioc_json",
+      "scope_to_check": "Metadata corrected against downloaded PMC full text. Kinetic/equilibrium connection and operating-parameter effects; verify temperature comparisons and add an independent primary study."
+    },
+    {
+      "question_id": "release_chem02",
+      "source_id": "fonin_2014_inner_filter",
+      "title": "Fluorescence of Dyes in Solutions with High Absorbance. Inner Filter Effect Correction",
+      "identifier": "10.1371/journal.pone.0103878",
+      "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4114876/",
+      "download_url": "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC4114876/unicode",
+      "format": "bioc_json",
+      "scope_to_check": "Inner-filter corrections and their limits; add a source measuring fluorescence lifetime for static/dynamic quenching discrimination."
+    },
+    {
+      "question_id": "release_fin01",
+      "source_id": "gu_kelly_xiu_ml",
+      "title": "Empirical Asset Pricing via Machine Learning",
+      "identifier": "author-hosted manuscript; record version from PDF",
+      "landing_url": "https://dachxiu.chicagobooth.edu/download/ML_BKP.pdf",
+      "download_url": "https://dachxiu.chicagobooth.edu/download/ML_BKP.pdf",
+      "format": "pdf",
+      "scope_to_check": "Chronological training, validation, and test design; add explicit overlapping-label dependence evidence."
+    },
+    {
+      "question_id": "release_fin02",
+      "source_id": "forbes_rigobon_w7267",
+      "title": "No Contagion, Only Interdependence: Measuring Stock Market Co-movements",
+      "identifier": "NBER Working Paper 7267",
+      "landing_url": "https://www.nber.org/papers/w7267",
+      "download_url": "https://www.nber.org/system/files/working_papers/w7267/w7267.pdf",
+      "format": "pdf",
+      "scope_to_check": "Volatility-dependent correlation and identification assumptions; supplement with a common-factor volatility model."
+    },
+    {
+      "question_id": "release_math01",
+      "source_id": "salari_knupp_2000",
+      "title": "Code Verification by the Method of Manufactured Solutions",
+      "identifier": "10.2172/759450; SAND2000-1444",
+      "landing_url": "https://www.osti.gov/biblio/759450",
+      "download_url": "https://www.osti.gov/servlets/purl/759450",
+      "format": "pdf",
+      "scope_to_check": "Manufactured-solution verification, observed convergence order, and boundary treatment."
+    },
+    {
+      "question_id": "release_math02",
+      "source_id": "flegal_jones_0811_1729",
+      "title": "Batch means and spectral variance estimators in Markov chain Monte Carlo",
+      "identifier": "arXiv:0811.1729",
+      "landing_url": "https://arxiv.org/abs/0811.1729",
+      "download_url": "https://arxiv.org/pdf/0811.1729",
+      "format": "pdf",
+      "scope_to_check": "Consistency assumptions for variance estimators under dependence; distinguish asymptotic coverage from finite-sample guarantees."
+    }
+  ]
+}

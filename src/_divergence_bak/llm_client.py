@@ -1,0 +1,340 @@
+"""llm_client.py：统一 LLM 客户端 —— 一个接口，双后端（DeepSeek / Ollama）
+
+第 3 天新增：json_chat —— 强制结构化输出（JSON）+ 校验 + 自动重试
+"""
+import json
+import os
+import re
+import time
+
+from dotenv import load_dotenv
+from openai import OpenAI
+
+from logger import get_logger
+
+load_dotenv()
+logger = get_logger("llm")
+
+_LAST_JSON_PERF = {}   # L5：最近一次 json_chat 的性能记录（attempts/duration_s/tokens），JSONL 落盘用
+_USAGE = {"prompt_tokens": 0, "completion_tokens": 0, "calls": 0}   # 本次进程累计 token 用量（算钱用）
+
+
+def _acc_usage(usage):
+    """把一次响应的 usage 累加到进程级计数器（每次 create 都算钱，包括失败重试）。"""
+    global _USAGE
+    if not usage:
+        return
+    try:
+        pt = int(getattr(usage, "prompt_tokens", 0) or 0)
+        ct = int(getattr(usage, "completion_tokens", 0) or 0)
+        if pt or ct:
+            _USAGE["prompt_tokens"] += pt
+            _USAGE["completion_tokens"] += ct
+            _USAGE["calls"] += 1
+    except Exception:
+        pass
+
+
+def get_usage():
+    """返回累计用量副本：{prompt_tokens, completion_tokens, calls}。"""
+    return dict(_USAGE)
+
+
+def reset_usage():
+    global _USAGE
+    _USAGE = {"prompt_tokens": 0, "completion_tokens": 0, "calls": 0}
+
+
+def get_last_json_perf():
+    """返回最近一次 json_chat 的性能记录副本；无记录返回空 dict。"""
+    return dict(_LAST_JSON_PERF)
+
+
+def get_client():
+    """按 LLM_BACKEND 选择后端，返回 (client, model_name)"""
+    backend = os.getenv("LLM_BACKEND", "deepseek").strip().lower()
+
+    if backend == "ollama":
+        client = OpenAI(
+            base_url=os.getenv("OLLAMA_BASE_URL"),
+            api_key="ollama",          # 本地不校验
+        )
+        model = os.getenv("OLLAMA_MODEL")
+    else:
+        client = OpenAI(
+            base_url=os.getenv("DEEPSEEK_BASE_URL"),
+            api_key=os.getenv("DEEPSEEK_API_KEY"),
+        )
+        model = os.getenv("DEEPSEEK_MODEL")
+    return client, model
+
+
+def chat(prompt, system="你是一个乐于助人的AI助手。", temperature=0.2):
+    """普通对话接口：返回纯文本（带日志）。temperature 可覆盖（如发散通道用 0.5）。"""
+    client, model = get_client()
+    backend = os.getenv("LLM_BACKEND", "deepseek").strip().lower()
+    t0 = time.time()
+    resp = client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": system},
+            {"role": "user", "content": prompt},
+        ],
+        temperature=temperature,
+    )
+    reply = resp.choices[0].message.content
+    usage = getattr(resp, "usage", None)
+    _acc_usage(usage)
+    token_info = ""
+    if usage and getattr(usage, "total_tokens", None):
+        token_info = f" | tokens={usage.total_tokens}"
+    logger.info(f"chat 成功 [{backend}/{model}] | 耗时 {time.time() - t0:.1f}s{token_info}")
+    return reply
+
+
+# ============ 结构化输出三件套：解析 / 校验 / 带重试的调用 ============
+
+def extract_json(text):
+    """把模型输出里的 JSON 抠出来（兼容 ```json 围栏和前后废话）"""
+    if not text:
+        return None
+    text = text.strip()
+
+    # 1. 如果有 markdown 代码块围栏，先剥掉
+    fence = re.search(r"```(?:json)?\s*(.*?)```", text, re.S)
+    if fence:
+        text = fence.group(1).strip()
+
+    # 2. 直接整体解析（模型很乖的时候一次就过）
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        pass
+
+    # 3. 模型后面可能加了废话，用花括号配对找出真正的 JSON 主体
+    start = text.find("{")
+    if start == -1:
+        return None
+    depth = 0
+    for i in range(start, len(text)):
+        if text[i] == "{":
+            depth += 1
+        elif text[i] == "}":
+            depth -= 1
+            if depth == 0:
+                try:
+                    return json.loads(text[start:i + 1])
+                except json.JSONDecodeError:
+                    return None
+    return None
+
+
+def _matches_type(value, want_type):
+    """判断类型是否匹配，支持联合类型如 ["integer", "null"]"""
+    if isinstance(want_type, list):
+        if "null" in want_type and value is None:
+            return True
+        return any(_matches_type(value, t) for t in want_type if t != "null")
+    if want_type == "integer":
+        return isinstance(value, int) and not isinstance(value, bool)
+    if want_type == "number":
+        return isinstance(value, (int, float)) and not isinstance(value, bool)
+    if want_type == "string":
+        return isinstance(value, str)
+    if want_type == "array":
+        return isinstance(value, list)
+    if want_type == "object":
+        return isinstance(value, dict)
+    if want_type == "boolean":
+        return isinstance(value, bool)
+    return True
+
+
+def _validate_dict(value, spec, prefix=""):
+    """校验嵌套对象：按 spec 的 required/properties 递归检查"""
+    errors = []
+    props = spec.get("properties", {})
+    for field in spec.get("required", []):
+        if field not in value:
+            errors.append(f"{prefix}缺少必填字段：{field}")
+            continue
+        v = value[field]
+        s = props.get(field, {})
+        wt = s.get("type")
+        if wt is None:
+            continue
+        if not _matches_type(v, wt):
+            if isinstance(wt, list):
+                errors.append(f"{prefix}字段「{field}」类型不符：应为 {' / '.join(wt)}，实际是 {type(v).__name__}")
+            else:
+                errors.append(f"{prefix}字段「{field}」类型不符：应为 {wt}，实际是 {type(v).__name__}")
+            continue
+        if wt == "string" or (isinstance(wt, list) and "string" in wt):
+            if isinstance(v, str) and not v.strip():
+                errors.append(f"{prefix}字段「{field}」是空字符串")
+        elif wt == "object" or (isinstance(wt, list) and "object" in wt):
+            if isinstance(v, dict) and s.get("properties"):
+                errors.extend(_validate_dict(v, s, f"{prefix}字段「{field}」："))
+    return errors
+
+
+def validate_against_schema(obj, schema):
+    """按 Schema 验收输出，返回错误清单（空列表 = 通过）。支持嵌套 object 与 null 联合类型。"""
+    errors = []
+    if not isinstance(obj, dict):
+        return [f"输出不是 JSON 对象，而是 {type(obj).__name__}"]
+
+    props = schema.get("properties", {})
+    for field in schema.get("required", []):
+        if field not in obj:
+            errors.append(f"缺少必填字段：{field}")
+            continue
+
+        value = obj[field]
+        spec = props.get(field, {})
+        want_type = spec.get("type")
+
+        if want_type is None:
+            continue
+        if not _matches_type(value, want_type):
+            if isinstance(want_type, list):
+                errors.append(f"字段「{field}」类型不符：应为 {' / '.join(want_type)}，实际是 {type(value).__name__}")
+            else:
+                errors.append(f"字段「{field}」类型不符：应为 {want_type}，实际是 {type(value).__name__}")
+            continue
+
+        if want_type == "string" or (isinstance(want_type, list) and "string" in want_type):
+            if isinstance(value, str) and not value.strip():
+                errors.append(f"字段「{field}」是空字符串")
+        elif want_type == "array" or (isinstance(want_type, list) and "array" in want_type):
+            if isinstance(value, list):
+                if len(value) == 0:
+                    errors.append(f"字段「{field}」是空数组")
+                item_spec = spec.get("items", {})
+                item_type = item_spec.get("type")
+                for idx, item in enumerate(value):
+                    if item_type == "string" and not isinstance(item, str):
+                        errors.append(f"字段「{field}」第 {idx} 个元素应为字符串")
+                    elif item_type == "object" and not isinstance(item, dict):
+                        errors.append(f"字段「{field}」第 {idx} 个元素应为对象")
+                    elif item_type == "object" and isinstance(item, dict) and item_spec.get("properties"):
+                        errors.extend(_validate_dict(item, item_spec, f"字段「{field}」第 {idx} 项："))
+        elif want_type == "object" or (isinstance(want_type, list) and "object" in want_type):
+            if isinstance(value, dict) and spec.get("properties"):
+                errors.extend(_validate_dict(value, spec, f"字段「{field}」："))
+
+    if schema.get("additionalProperties") is False:
+        allowed = set(props.keys())
+        for field in obj:
+            if field not in allowed:
+                errors.append(f"出现 Schema 之外的字段：「{field}」")
+
+    return errors
+
+
+class JsonChatError(RuntimeError):
+    """json_chat 连续失败时抛出，携带最后一次原始输出，供调用方走解析兜底链"""
+
+    def __init__(self, message, last_content=None):
+        super().__init__(message)
+        self.last_content = last_content
+
+
+def json_chat(prompt, system="", schema=None, max_retries=3):
+    """强约束对话：返回 dict。失败自动重试，并把错误清单回喂给模型自纠错。
+
+    - DeepSeek 后端：response_format=json_object（官方 JSON 模式）
+    - Ollama 后端：不传 format（本地模型靠提示词约束 + extract_json 兜底，避免 SDK 参数差异）
+    """
+    client, model = get_client()
+    backend = os.getenv("LLM_BACKEND", "deepseek").strip().lower()
+
+    extra = {}
+    if backend != "ollama":
+        # DeepSeek 官方 JSON 模式：要求 prompt 里出现 "json" 字样（我们的 system 里有）
+        extra["response_format"] = {"type": "json_object"}
+
+    messages = [
+        {"role": "system", "content": system},
+        {"role": "user", "content": prompt},
+    ]
+
+    t0 = time.time()
+    last_error = ""
+    last_content = None
+    for attempt in range(max_retries + 1):
+        try:
+            resp = client.chat.completions.create(
+                model=model,
+                messages=messages,
+                temperature=0,          # 结构化输出要确定性，不要创意
+                **extra,
+            )
+            content = resp.choices[0].message.content
+            last_content = content
+            _acc_usage(getattr(resp, "usage", None))
+            obj = extract_json(content)
+            errors = validate_against_schema(obj, schema) if obj is not None else ["解析 JSON 失败"]
+
+            if not errors:
+                usage = getattr(resp, "usage", None)
+                token_info = ""
+                if usage and getattr(usage, "total_tokens", None):
+                    token_info = f" | tokens={usage.total_tokens}"
+                logger.info(f"json_chat 成功 [{backend}/{model}] 第 {attempt + 1} 次调用"
+                            f" | 耗时 {time.time() - t0:.1f}s{token_info}")
+                _LAST_JSON_PERF.clear()
+                _LAST_JSON_PERF.update({
+                    "attempts": attempt + 1,
+                    "duration_s": round(time.time() - t0, 2),
+                    "tokens": int(usage.total_tokens) if usage and getattr(usage, "total_tokens", None) else None,
+                })
+                return obj
+
+            last_error = "；".join(errors)
+            logger.warning(f"json_chat 第 {attempt + 1} 次失败 [{backend}/{model}]：{last_error}")
+            messages.append({"role": "assistant", "content": content})
+            example_hint = ""
+            if schema and isinstance(schema, dict) and isinstance(schema.get("properties"), dict):
+                ex_lines = []
+                for fname, spec in schema["properties"].items():
+                    if isinstance(spec, dict) and spec.get("examples"):
+                        wt = spec.get("type")
+                        if isinstance(wt, list):
+                            wt = wt[0] if wt else None
+                        if wt == "array":
+                            ex_lines.append('"%s": %s' % (fname, json.dumps(spec["examples"], ensure_ascii=False)))
+                        else:
+                            ex_lines.append('"%s": %s' % (fname, json.dumps(spec["examples"][0], ensure_ascii=False)))
+                if ex_lines:
+                    example_hint = ("\n易错字段的合法形态示例（必须严格按此形态输出）：\n{\n  "
+                                    + ",\n  ".join(ex_lines) + "\n}\n")
+            messages.append({"role": "user",
+                             "content": f"你上次的输出不符合要求：{last_error}\n"
+                                        f"{example_hint}请严格按规则重新输出一个完整的 JSON 对象。"})
+
+        except Exception as e:
+            last_error = f"API 异常：{e}"
+            logger.error(f"json_chat 第 {attempt + 1} 次异常 [{backend}/{model}]：{e}")
+            time.sleep(1)   # 网络抖动的简单退避
+
+    raise JsonChatError(f"json_chat 连续失败 {max_retries + 1} 次，最后错误：{last_error}", last_content)
+
+
+if __name__ == "__main__":
+    print("请选择后端：")
+    print("  1 = DeepSeek（云端）")
+    print("  2 = Ollama（本地）")
+    choice = input("请输入 1 或 2：").strip()
+
+    if choice == "1":
+        os.environ["LLM_BACKEND"] = "deepseek"
+    elif choice == "2":
+        os.environ["LLM_BACKEND"] = "ollama"
+    else:
+        print("输入无效，默认用 DeepSeek")
+        os.environ["LLM_BACKEND"] = "deepseek"
+
+    print("=== 当前后端:", os.getenv("LLM_BACKEND"), "===")
+    question = input("请输入你的问题：")
+    print(chat(question))

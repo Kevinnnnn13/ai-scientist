@@ -1,0 +1,406 @@
+{
+  "planned": 96,
+  "completed": 96,
+  "execution_failures": 0,
+  "groups": {
+    "C": {
+      "planned": 48,
+      "valid": 48,
+      "ineligible": 36,
+      "eligible": 12,
+      "false_release": 0,
+      "eligible_release": 9,
+      "false_rejection": 3,
+      "by_condition": {
+        "T0": {
+          "valid": 6,
+          "released": 4
+        },
+        "T1": {
+          "valid": 6,
+          "released": 5
+        },
+        "T2": {
+          "valid": 6,
+          "released": 0
+        },
+        "T3": {
+          "valid": 6,
+          "released": 0
+        },
+        "T4": {
+          "valid": 6,
+          "released": 0
+        },
+        "T5": {
+          "valid": 6,
+          "released": 0
+        },
+        "T6": {
+          "valid": 6,
+          "released": 0
+        },
+        "T7": {
+          "valid": 6,
+          "released": 0
+        }
+      }
+    },
+    "D": {
+      "planned": 48,
+      "valid": 48,
+      "ineligible": 36,
+      "eligible": 12,
+      "false_release": 0,
+      "eligible_release": 9,
+      "false_rejection": 3,
+      "by_condition": {
+        "T0": {
+          "valid": 6,
+          "released": 5
+        },
+        "T1": {
+          "valid": 6,
+          "released": 4
+        },
+        "T2": {
+          "valid": 6,
+          "released": 0
+        },
+        "T3": {
+          "valid": 6,
+          "released": 0
+        },
+        "T4": {
+          "valid": 6,
+          "released": 0
+        },
+        "T5": {
+          "valid": 6,
+          "released": 0
+        },
+        "T6": {
+          "valid": 6,
+          "released": 0
+        },
+        "T7": {
+          "valid": 6,
+          "released": 0
+        }
+      }
+    }
+  },
+  "paired_release_decisions": {
+    "C_1_D_1": 7,
+    "C_0_D_0": 37,
+    "C_1_D_0": 2,
+    "C_0_D_1": 2
+  },
+  "api_events": {
+    "received": 96
+  },
+  "response_models": {
+    "deepseek-flash": 96
+  },
+  "tokens": {
+    "prompt_tokens": 89178,
+    "completion_tokens": 16065,
+    "total_tokens": 105243
+  },
+  "C_receipt_diagnostic": {
+    "n": 48,
+    "changed_decisions": 0,
+    "rows": [
+      {
+        "name": "p001_C",
+        "full_release": true,
+        "semantic_only_release": true,
+        "eligible": true
+      },
+      {
+        "name": "p002_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p003_C",
+        "full_release": true,
+        "semantic_only_release": true,
+        "eligible": true
+      },
+      {
+        "name": "p004_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p005_C",
+        "full_release": true,
+        "semantic_only_release": true,
+        "eligible": true
+      },
+      {
+        "name": "p006_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": true
+      },
+      {
+        "name": "p007_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p008_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": true
+      },
+      {
+        "name": "p009_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p010_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p011_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p012_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p013_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p014_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p015_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p016_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p017_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p018_C",
+        "full_release": true,
+        "semantic_only_release": true,
+        "eligible": true
+      },
+      {
+        "name": "p019_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p020_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p021_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p022_C",
+        "full_release": true,
+        "semantic_only_release": true,
+        "eligible": true
+      },
+      {
+        "name": "p023_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p024_C",
+        "full_release": true,
+        "semantic_only_release": true,
+        "eligible": true
+      },
+      {
+        "name": "p025_C",
+        "full_release": true,
+        "semantic_only_release": true,
+        "eligible": true
+      },
+      {
+        "name": "p026_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p027_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p028_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p029_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p030_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p031_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p032_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p033_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p034_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p035_C",
+        "full_release": true,
+        "semantic_only_release": true,
+        "eligible": true
+      },
+      {
+        "name": "p036_C",
+        "full_release": true,
+        "semantic_only_release": true,
+        "eligible": true
+      },
+      {
+        "name": "p037_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p038_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p039_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p040_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p041_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p042_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p043_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p044_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p045_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p046_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p047_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": false
+      },
+      {
+        "name": "p048_C",
+        "full_release": false,
+        "semantic_only_release": false,
+        "eligible": true
+      }
+    ]
+  },
+  "mechanical_replay_and_raw_binding": "passed",
+  "design": "post_hoc_reused_inputs_not_new_holdout"
+}

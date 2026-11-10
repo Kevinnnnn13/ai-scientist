@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "study_id": "selective_release_20261014",
+  "status": "development",
+  "selection_note": "Six candidate questions; source packets and independent review are pending. Do not use these candidates for tuning.",
+  "budget_reason": "",
+  "order_seed": 20261014,
+  "full_repeats": 3,
+  "policy": {
+    "target": 90,
+    "evidence_floor": 60,
+    "dimension_floor": 75,
+    "novelty_floor": 50,
+    "min_quote_chars": 20,
+    "max_units": 120,
+    "max_prompt_chars": 60000,
+    "version": "selective-release-v1"
+  },
+  "model": {
+    "backend": "deepseek",
+    "name": "deepseek-chat",
+    "snapshot_or_access_date": "",
+    "verifier_role": "separate_call_same_backend"
+  },
+  "questions": [
+    {
+      "id": "release_chem01",
+      "domain": "chemistry",
+      "text": "How should an adsorption study distinguish changes in equilibrium uptake from changes in equilibration time when temperature is varied, and which controls would make the proposed comparison interpretable?"
+    },
+    {
+      "id": "release_chem02",
+      "domain": "chemistry",
+      "text": "How can a fluorescence-quenching study distinguish static and dynamic quenching from an inner-filter artifact, and what evidence must support each proposed diagnostic?"
+    },
+    {
+      "id": "release_fin01",
+      "domain": "finance",
+      "text": "How should a monthly return-forecasting study separate genuine predictive information from look-ahead leakage and overlapping-label dependence in its validation design?"
+    },
+    {
+      "id": "release_fin02",
+      "domain": "finance",
+      "text": "How can an empirical study distinguish volatility spillover between two markets from their shared exposure to a common factor, and which assumptions would limit the conclusion?"
+    },
+    {
+      "id": "release_math01",
+      "domain": "mathematics",
+      "text": "How should a numerical study separate discretization error from boundary-approximation error when testing convergence of a finite-difference solution to a diffusion equation?"
+    },
+    {
+      "id": "release_math02",
+      "domain": "mathematics",
+      "text": "How should a Monte Carlo study check uncertainty estimates when simulated observations are dependent, and how can it distinguish a central-limit approximation from a finite-sample guarantee?"
+    }
+  ]
+}
